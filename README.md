@@ -1,6 +1,10 @@
 # sns-vue-go
 
-> A Vue.js project
+> Build twitter-like SNS with Vue.js, Golang.
+> This application consists of a single page, and the front side and the server side are completely separated.
+> Moreover, because it is PWA, it corresponds to mobile.
+> Use firebase for authentication.
+> The database uses mongoDB.
 
 ## Build Setup
 
