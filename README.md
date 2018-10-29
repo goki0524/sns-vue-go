@@ -1,4 +1,4 @@
-# sns-vue
+# sns-vue-go
 
 > A Vue.js project
 
