@@ -29,14 +29,14 @@ func authMiddleware(next http.HandlerFunc) http.HandlerFunc {
 			os.Exit(1)
 		}
 
-		// クライアントから送られてきた JWT 取得
+		// クライアントから送られてきたJWT取得
 		authHeader := r.Header.Get("Authorization")
 		idToken := strings.Replace(authHeader, "Bearer ", "", 1)
 
-		// JWT の検証
+		// JWTの検証
 		token, err := auth.VerifyIDToken(context.Background(), idToken)
 		if err != nil {
-			// JWT が無効なら Handler に進まず別処理
+			// JWTが無効ならHandlerに進まず別処理
 			fmt.Printf("error verifying ID token: %v\n", err)
 			w.WriteHeader(http.StatusUnauthorized)
 			w.Write([]byte("error verifying ID token\n"))
